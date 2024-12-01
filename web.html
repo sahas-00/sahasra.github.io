@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahasra Manahara | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #417ee0, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-image {
+            background: url('hero-image.jpg') center/cover;
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#0a192f] text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">SM</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="nav-link hover:text-secondary-blue transition">About</a>
+                    <a href="#education" class="nav-link hover:text-secondary-blue transition">Education</a>
+                    <a href="#skills" class="nav-link hover:text-secondary-blue transition">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-secondary-blue transition">Projects</a>
+                    <a href="#certificate" class="nav-link hover:text-secondary-blue transition">Certificate</a>
+                    <a href="#contact" class="nav-link hover:text-secondary-blue transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-secondary-blue">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-image min-h-screen flex items-center relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <p class="text-blue-400 mb-4">Hi, my name is</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Sahasra Manahara</h1>
+                <p class="text-2xl md:text-3xl text-gray-400 mb-8">
+                    I build innovative solutions through technology and education.
+                </p>
+                <a href="#about" class="inline-block bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded-full text-lg">
+                    Learn More
+                </a>
+            </div>
+            <div class="scroll-indicator absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <i class="fas fa-chevron-down text-2xl text-blue-400"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#0a192f] text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <img 
+                            src="photo.jpg" 
+                            alt="Sahasra Manahara" 
+                            class="w-64 h-64 object-cover rounded-lg shadow-2xl transform transition duration-300 hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-secondary-blue/20 rounded-lg -z-10 transform -rotate-6"></div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">About Me</h2>
+                    <div class="space-y-4 text-gray-300 leading-relaxed">
+                        <p>
+                            I am an undergraduate student pursuing dual degrees in Mathematics (Statistics) and Computer Science, 
+                            combining analytical prowess with technological innovation at the University of Ruhuna.
+                        </p>
+                        <p>
+                            With over two years of teaching experience, I have developed strong leadership, communication, 
+                            and organizational skills that complement my technical expertise.
+                        </p>
+                        <p>
+                            Currently, I'm leading a team in developing SKILLHUB, an innovative Skilled Workers Hiring Platform. 
+                            Using technologies like Java, Firebase, and Android Studio, we're creating a solution that efficiently 
+                            connects tradespeople with clients.
+                        </p>
+                        <p>
+                            My passion lies in creating impactful digital solutions that address real-world challenges, 
+                            bridging the gap between theoretical knowledge and practical application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Educational Journey</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-secondary-blue">University of Colombo</h3>
+                        <span class="text-sm text-gray-400">2022 - Present</span>
+                    </div>
+                    <h4 class="text-lg mb-2 text-white">Bachelor of Information Technology (BIT)</h4>
+                    <div class="bg-gray-700 rounded-lg p-4 mt-4">
+                        <h5 class="text-md font-semibold mb-2 text-secondary-blue">Key Skills</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Information Technology</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Computer Science</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Software Development</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-secondary-blue">University of Ruhuna</h3>
+                        <span class="text-sm text-gray-400">2021 - Present</span>
+                    </div>
+                    <h4 class="text-lg mb-2 text-white">BSc in Mathematics & Computer Science</h4>
+                    <div class="bg-gray-700 rounded-lg p-4 mt-4">
+                        <h5 class="text-md font-semibold mb-2 text-secondary-blue">Key Skills</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Computer Science</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Leadership</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Problem Solving</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Mathematics</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Teamwork</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Statistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="Experience" class="py-20 bg-[#0a192f] text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Professional Experience</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="card p-8 rounded-xl bg-gray-800 border border-gray-700 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-secondary-blue">Government Teacher</h3>
+                        <span class="text-sm text-gray-400">2020 March - 2022 July</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Mathematics</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        <b>Siri Vidya Prabhashwara Mulika Piriwena-Galle</b>
+                        
+                        During my <b>two and a half years of experience as a government teacher</b>,
+                        <br> I have:
+                       <br> 
+                        • Developed strong leadership and communication skills <br>
+                        • Successfully managed diverse classroom environments <br>
+                        • Trained and mentored students effectively <br>
+                        • Demonstrated exceptional organizational capabilities <br>
+                    </p>
+                </div>
+                
+                <div class="card p-8 rounded-xl bg-gray-800 border border-gray-700 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-secondary-blue">Department of Inland Revenue</h3>
+                        <span class="text-sm text-gray-400">Internship</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Regional Office-Galle</p>
+                    
+                    <div class="bg-gray-700 rounded-lg p-4 mb-4">
+                        <h4 class="text-md font-semibold mb-2 text-secondary-blue">Key Skills</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Interpersonal Communication</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Microsoft Office</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Data Entry</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Income Tax</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Statistical Analysis</span>
+                            <span class="bg-gray-600 px-2 py-1 rounded-full text-xs">Web Development</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed">
+                        Gained valuable experience in taxation, data analysis, and administrative processes 
+                        at the Regional Office in Galle, developing a comprehensive understanding of 
+                        government administrative procedures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[#0a192f]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Technical Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="card p-6 rounded-xl text-center bg-gray-800 hover:bg-gray-700 transition-colors duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <i class="fab fa-java text-5xl mb-4 text-blue-400"></i>
+                    <h3 class="text-white font-semibold">Java</h3>
+                    <p class="text-gray-400 text-sm mt-2">Programming Language</p>
+                </div>
+                <div class="card p-6 rounded-xl text-center bg-gray-800 hover:bg-gray-700 transition-colors duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <i class="fab fa-android text-5xl mb-4 text-green-400"></i>
+                    <h3 class="text-white font-semibold">Android Studio</h3>
+                    <p class="text-gray-400 text-sm mt-2">Mobile Development</p>
+                </div>
+                <div class="card p-6 rounded-xl text-center bg-gray-800 hover:bg-gray-700 transition-colors duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <i class="fas fa-database text-5xl mb-4 text-yellow-400"></i>
+                    <h3 class="text-white font-semibold">Firebase</h3>
+                    <p class="text-gray-400 text-sm mt-2">Cloud Database</p>
+                </div>
+                <div class="card p-6 rounded-xl text-center bg-gray-800 hover:bg-gray-700 transition-colors duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <i class="fab fa-github text-5xl mb-4 text-white"></i>
+                    <h3 class="text-white font-semibold">GitHub</h3>
+                    <p class="text-gray-400 text-sm mt-2">Version Control</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center gradient-text">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="project-card rounded-lg overflow-hidden">
+                    <img src="project.jpg" alt="SKILLHUB Project" class="w-full h-full object-cover">
+                    <div class="project-overlay">
+                        <h3 class="text-2xl font-bold mb-4">SKILLHUB</h3>
+                        <p class="text-gray-300 mb-6 text-center">
+                            A platform connecting skilled workers with clients through intelligent matching algorithms.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/pavithrailankoon/skillshub/releases/tag/v1.0.0" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full">
+                                View Project
+                            </a>
+                            <a href="https://github.com/pavithrailankoon/skillshub" class="border border-blue-400 hover:bg-blue-400/20 px-6 py-2 rounded-full">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional project cards can be added here -->
+            </div>
+        </div>
+    </section>
+<hr>
+    <!-- Certifications -->
+    <section id="connect" class="py-20 bg-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8 gradient-text">Certification</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <div>
+                <h3 class="font-semibold">Basic of Exploratory Data Analysis Certificate</h3><br>
+                <a href="https://olympus.mygreatlearning.com/courses/13687/certificate" class="bg-blue-500 hover:bg-blue-500 px-6 py-2 rounded-full">
+                    Great Learning
+                </a>
+            </div>
+            <div>
+                <h3 class="font-semibold">Data Science Foundation Certificate</h3><br>
+                <a href="https://www.mygreatlearning.com/certificate/WAIFKJJP" class="bg-blue-500 hover:bg-blue-500 px-6 py-2 rounded-full">
+                    Great Learning
+                </a>
+            </div>
+            <div>
+                <h3 class="font-semibold">Data Visualization with Power BI Certificate</h3><br>
+                <a href="https://olympus.mygreatlearning.com/courses/30824/certificate" class="bg-blue-500 hover:bg-blue-500 px-6 py-2 rounded-full">
+                    Great Learning
+                </a>  
+            </div>
+            <div>
+                <h3 class="font-semibold">Front End Development Certificate</h3><br>
+                <a href="https://olympus.mygreatlearning.com/courses/12761/certificate" class="bg-blue-500 hover:bg-blue-500 px-6 py-2 rounded-full">
+                    Great Learning
+                </a>  
+            </div>
+            <div>
+                <h3 class="font-semibold">Digital Marketing Certificate</h3><br>
+                <a href="https://www.mygreatlearning.com/certificate/LPIJQILU" class="bg-blue-500 hover:bg-blue-500 px-6 py-2 rounded-full">
+                    Great Learning
+                </a>   
+            </div>
+        </div>
+    </section>
+<hr>
+   <!-- Social Media Connect Section -->
+<section id="connect" class="py-20 bg-[#0a192f]">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-8 gradient-text">Let's Connect</h2>
+        
+        <div class="max-w-2xl mx-auto">
+            <p class="text-gray-400 mb-8">
+                Feel free to reach out and connect with me on various platforms. 
+                I'm always open to professional networking, collaboration, and interesting conversations.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/sahasra-manahara-788586311/" target="_blank" 
+                   class="social-card flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <i class="fab fa-linkedin-in text-4xl text-blue-500"></i>
+                    <span class="mt-2 text-sm text-white">LinkedIn</span>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/sahas-00" target="_blank" 
+                   class="social-card flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <i class="fab fa-github text-4xl text-gray-300"></i>
+                    <span class="mt-2 text-sm text-white">GitHub</span>
+                </a>
+                
+                <!-- Twitter/X -->
+                <a href="https://x.com/SahasraManahara" target="_blank" 
+                   class="social-card flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <i class="fab fa-twitter text-4xl text-sky-400"></i>
+                    <span class="mt-2 text-sm text-white">Twitter</span>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/_sahas_00/" target="_blank" 
+                   class="social-card flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <i class="fab fa-instagram text-4xl text-pink-500"></i>
+                    <span class="mt-2 text-sm text-white">Instagram</span>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/sahasra.manahara/" target="_blank" 
+                   class="social-card flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <i class="fab fa-facebook text-4xl text-blue-600"></i>
+                    <span class="mt-2 text-sm text-white">Facebook</span>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:sahasramanahara@gmail.com" 
+                   class="social-card flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300">
+                    <i class="fas fa-envelope text-4xl text-red-500"></i>
+                    <span class="mt-2 text-sm text-white">Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .social-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+</style>
+
+        <!-- my resume -->
+        <section class="py-12 bg-[#0a192f]">
+            <div class="container mx-auto text-center">
+                <a 
+                    href="MY CV.pdf" 
+                    target="_blank" 
+                    class="inline-block 
+                        border-2 
+                        border-secondary-blue 
+                        text-secondary-blue 
+                        hover:bg-secondary-blue/20 
+                        px-8 
+                        py-3 
+                        rounded-full 
+                        text-lg 
+                        transition-all 
+                        duration-300 
+                        hover:scale-105 
+                        shadow-md 
+                        hover:shadow-secondary-blue/50"
+                >
+                    <i class="fas fa-download mr-2"></i>Download Resume
+                </a>
+            </div>
+         </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>© 2024 Sahasra Manahara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menuBtn');
+        const nav = document.querySelector('nav');
+        
+        menuBtn.addEventListener('click', () => {
+            const existingMenu = document.querySelector('.mobile-menu');
+            
+            if (existingMenu) {
+                // If menu is already open, remove it
+                existingMenu.remove();
+            } else {
+                // Create mobile menu
+                const div = document.createElement('div');
+                div.className = 'mobile-menu absolute top-16 left-0 w-full bg-gray-900/95 backdrop-blur-md p-6 z-40';
+                div.innerHTML = `
+                    <div class="flex flex-col space-y-4">
+                        <a href="#about" class="block py-2 text-white hover:text-blue-400 transition">About</a>
+                        <a href="#education" class="block py-2 text-white hover:text-blue-400 transition">Education</a>
+                        <a href="#skills" class="block py-2 text-white hover:text-blue-400 transition">Skills</a>
+                        <a href="#projects" class="block py-2 text-white hover:text-blue-400 transition">Projects</a>
+                        <a href="#certificate" class="block py-2 text-white hover:text-blue-400 transition">Certificate</a>
+                        <a href="#contact" class="block py-2 text-white hover:text-blue-400 transition">Contact</a>
+                    </div>
+                `;
+                
+                // Append menu to nav
+                nav.appendChild(div);
+    
+                // Add click event listeners to close menu when a link is clicked
+                const mobileLinks = div.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        div.remove();
+                    });
+                });
+    
+                // Add close menu functionality when clicking outside
+                const closeMenu = (event) => {
+                    if (!div.contains(event.target) && event.target !== menuBtn) {
+                        div.remove();
+                        document.removeEventListener('click', closeMenu);
+                    }
+                };
+    
+                // Delay adding the document click listener to prevent immediate closure
+                setTimeout(() => {
+                    document.addEventListener('click', closeMenu);
+                }, 0);
+            }
+        });
+    </script>
+
+<script>
+    // Smooth scroll
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+ 
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+ 
+        // Select all direct children of sections that might contain content
+        const animatedElements = document.querySelectorAll('section > div, section > .container');
+        
+        animatedElements.forEach(element => {
+            element.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(element);
+        });
+    });
+ </script>
+</body>
+</html>
